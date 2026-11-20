@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Happy Birthday Tâm Anh 🌲</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Floating Ambient Canvas (Misty Mountain Haze, Pine Dust & Warm Glowing Embers) -->
+  <canvas id="ambientCanvas"></canvas>
+
+  <!-- ==========================================================================
+       SCREEN 1: INTRO COVER ("Ai cho hết sinh nhật")
+       ========================================================================== -->
+  <section class="screen cover-screen" id="coverScreen">
+    <div class="cover-backdrop"></div>
+    <div class="mist-layer"></div>
+
+    <div class="cover-content">
+      <h1 class="cover-title">Ủa?<br><span class="highlight">Ai cho hết sinh nhật!</span></h1>
+      
+
+      <div class="cover-cta-wrap">
+        <button class="cta-button pulse" id="openMainBtn">
+          <span>YASSSSSSSSSSS</span>
+          <svg class="cta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M5 12h14M12 5l7 7-7 7"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Pine silhouettes at bottom -->
+    <div class="pine-trees-silhouette"></div>
+  </section>
+
+  <!-- ==========================================================================
+       SCREEN 2: MAIN PAGE (AESTHETIC DALAT MISTY MOUNTAINS & PINE FOREST)
+       ========================================================================== -->
+  <main class="screen main-screen hidden" id="mainScreen">
+
+    <!-- Unified Panoramic Dalat Landscape Backdrop (Sky, Mountains, Sun, Clouds) -->
+    <div class="landscape-backdrop">
+      <!-- Golden Sun with subtle radiant flare -->
+      <div class="dalat-sun-container">
+        <div class="sun-flare"></div>
+        <div class="sun-beam beam-1"></div>
+        <div class="sun-beam beam-2"></div>
+      </div>
+
+      <!-- Drifting Clouds -->
+      <div class="clouds-container">
+        <div class="cloud cloud-1"></div>
+        <div class="cloud cloud-2"></div>
+        <div class="cloud cloud-3"></div>
+      </div>
+
+      <!-- Misty Mountain Silhouettes in Backdrop -->
+      <svg class="backdrop-mountains-svg" viewBox="0 0 1440 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <!-- Núi Lang Biang tầng xa mờ ảo -->
+        <path d="M0,130 Q220,60 480,95 T1020,55 Q1220,40 1440,85 L1440,320 L0,320 Z" fill="#6c9bb7" opacity="0.25"/>
+        <!-- Sương mù thung lũng -->
+        <path d="M0,160 Q380,110 780,140 T1440,120 L1440,320 L0,320 Z" fill="#e2f0fb" opacity="0.45"/>
+        <!-- Đồi thông thoai thoải -->
+        <path d="M0,185 Q260,130 580,165 T1160,140 Q1320,130 1440,160 L1440,320 L0,320 Z" fill="#2d5f47" opacity="0.3"/>
+      </svg>
+    </div>
+
+    <!-- MAIN SCROLLING JOURNAL CONTAINER -->
+    <div class="journal-wrapper">
+      
+      <!-- HERO HEADER -->
+      <header class="aesthetic-header">
+
+        <h1 class="aesthetic-title">Happy Birthday Tâm Anh ✨</h1>
+        
+        <!-- Handwritten Postcard Card -->
+        <div class="aesthetic-postcard-card">
+          <div class="washi-tape-pin"></div>
+          
+          <!-- <h2 class="postcard-heading">From Chigau with love 💌</h2> -->
+          
+          <p class="postcard-body">
+            Sao mà thiếu thiệp sinh nhật của IT gỉl được :3<br>
+            Chúc bạn tuổi mới nhiều tình iu, nhiều tiền nhiều trip, nhiều may mắn thuận lợi nha!!!<br>
+            Cảm ơn TA vì đã mang lại rấc nhiều niềm vui và tích cực cho t và cả team. <br>
+            Nhớ TA vl!!! Sớm gặp b iuuuuuuuuuuuuuuuuu 
+          </p>
+
+          <div class="postcard-signature">
+            <span class="sign-from">Chigau 💕</span>
+          </div>
+        </div>
+
+        <!-- Delicate Botanical Divider -->
+        <div class="botanical-divider">
+          <span class="line"></span>
+          <span class="line"></span>
+        </div>
+      </header>
+
+      <!-- SECTION 1: THƯỚC PHIM KỶ NIỆM (VINTAGE CINEMA FRAME) -->
+      <section class="journal-section video-journal-section">
+        <div class="section-label">
+        </div>
+
+       <h3 class="section-art-title">Sinh nhật TA cùng SôSồ 🎉</h3>
+
+     <div class="section-label">
+        </div>
+
+        <!-- Video Tape Selector Tabs -->
+        <div class="cinema-tape-tabs">
+          <button class="tape-tab-btn active" data-src="images/video1.mp4" data-poster="images/photo1.jpg" data-title="KODAK 35MM • CUỘN PHIM 01">
+            <span class="tab-icon">📼</span> 01
+          </button>
+          <button class="tape-tab-btn" data-src="images/video2.mp4" data-poster="images/photo2.jpg" data-title="KODAK 35MM • CUỘN PHIM 02">
+            <span class="tab-icon">📼</span> 02
+          </button>
+          <button class="tape-tab-btn" data-src="images/video3.mp4" data-poster="images/photo3.jpg" data-title="KODAK 35MM • CUỘN PHIM 03">
+            <span class="tab-icon">📼</span> 03
+          </button>
+        </div>
+
+        <div class="vintage-cinema-box">
+          <div class="cinema-header-strip">
+            <div class="film-holes left">
+              <span></span><span></span><span></span><span></span>
+            </div>
+            <div class="film-meta">
+              <span class="rec-dot"></span>
+              <span class="film-title" id="cinemaFilmTitle">KODAK 35MM • CUỘN PHIM 01 • TAM_ANH_MEMORIES.MP4</span>
+            </div>
+            <div class="film-holes right">
+              <span></span><span></span><span></span><span></span>
+            </div>
+          </div>
+
+          <div class="cinema-video-wrapper">
+            <video id="birthdayVideo" controls poster="images/photo1.jpg">
+              <source src="images/video1.mp4" type="video/mp4">
+              Trình duyệt của bạn không hỗ trợ thẻ video.
+            </video>
+          </div>
+        </div>
+
+        <!-- Delicate Botanical Divider -->
+        <div class="botanical-divider">
+          <span class="line"></span>
+          <span class="icon">📷</span>
+          <span class="line"></span>
+        </div>
+      </section>
+
+      <!-- SECTION 2: TIỆM ẢNH POLAROID MOODBOARD (AESTHETIC COLLAGE) -->
+      <section class="journal-section photos-journal-section">
+        <div class="section-label">
+          <!-- <span class="label-number">02</span> -->
+        </div>
+
+       
+
+        <!-- Polaroid Moodboard Grid -->
+        <div class="moodboard-gallery">
+          
+          <!-- Card 1 -->
+          <div class="moodboard-card tilt-left-subtle">
+            <div class="washi-tape-strip tape-terracotta"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo1.jpg" alt="Ảnh kỷ niệm Tâm Anh 1">
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="moodboard-card tilt-right-subtle">
+            <div class="washi-tape-strip tape-moss"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo2.jpg" alt="Ảnh kỷ niệm Tâm Anh 2">
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="moodboard-card tilt-straight">
+            <div class="washi-tape-strip tape-coffee"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo3.jpg" alt="Ảnh kỷ niệm Tâm Anh 3">
+            </div>
+          </div>
+
+          <!-- Card 4 (Ngang / Landscape) -->
+          <div class="moodboard-card card-wide tilt-right-subtle">
+            <div class="washi-tape-strip tape-terracotta"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo4.jpg" alt="Ảnh kỷ niệm Tâm Anh 4">
+            </div>
+          </div>
+
+          <!-- Card 5 -->
+          <div class="moodboard-card tilt-left-subtle">
+            <div class="washi-tape-strip tape-moss"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo5.jpg" alt="Ảnh kỷ niệm Tâm Anh 5">
+            </div>
+          </div>
+
+          <!-- Card 6 -->
+          <div class="moodboard-card tilt-straight">
+            <div class="washi-tape-strip tape-coffee"></div>
+            <div class="moodboard-img-wrap">
+              <img src="images/photo6.jpg" alt="Ảnh kỷ niệm Tâm Anh 6">
+            </div>
+          </div>
+
+          <!-- Card 7 (To bằng Video - 16:9 Cinema Full-Width) -->
+          <div class="moodboard-card card-cinema-size tilt-straight">
+            <div class="washi-tape-strip tape-moss"></div>
+            <div class="moodboard-img-wrap aspect-cinema">
+              <img src="images/photo7.jpg" alt="Ảnh kỷ niệm Tâm Anh 7">
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Delicate Botanical Divider -->
+        <div class="botanical-divider">
+          <span class="line"></span>
+          <span class="icon">✨</span>
+          <span class="line"></span>
+        </div>
+      </section>
+
+      <!-- SECTION 3: HỘP ĐIỀU ƯỚC SINH NHẬT (AESTHETIC WISH JAR) -->
+      <section class="journal-section wish-journal-section">
+        <div class="aesthetic-wish-box">
+          <div class="wish-cake-icon">🕯️🎂🕯️</div>
+          
+          <button class="aesthetic-wish-btn" id="makeWishBtn">
+            <span>🕯️ Thổi nến & ước một điều ✨</span>
+          </button>
+          
+          <div class="wish-result-message hidden" id="wishResult"></div>
+        </div>
+      </section>
+
+    </div> <!-- End journal-wrapper -->
+
+    <!-- ==========================================================================
+         DÃY NÚI MỜ SƯƠNG & RỪNG THÔNG TOÀN CẢNH Ở ĐÁY TRANG (MATCHING AESTHETIC)
+         ========================================================================== -->
+    <div class="mountains-bottom-landscape">
+      <!-- Panoramic Mountain & Pine Ridge SVG (Harmonious with Top) -->
+      <svg class="artistic-mountain-svg" viewBox="0 0 1440 380" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <!-- Cây thông Đà Lạt tinh tế -->
+          <g id="dalatFinePine">
+            <path d="M0,0 Q-3,110 -2,240 L5,240 Q4,110 0,0 Z" fill="#2a1f14"/>
+            <polygon points="0,-35 12,15 -12,15" fill="#1b4332"/>
+            <polygon points="0,0 18,48 -18,48" fill="#245137"/>
+            <polygon points="0,30 26,85 -26,85" fill="#1b4332"/>
+            <polygon points="0,65 34,125 -34,125" fill="#2d5e41"/>
+            <polygon points="0,105 44,175 -44,175" fill="#1b4332"/>
+            <polygon points="0,150 54,230 -54,230" fill="#245137"/>
+          </g>
+
+          <!-- Căn nhà gỗ nhỏ trên sườn đồi Đà Lạt (Homestay / Cafe) -->
+          <g id="hillsideCabin">
+            <rect x="0" y="8" width="46" height="28" fill="#5c3d23" rx="2"/>
+            <polygon points="-8,8 23,-12 54,8" fill="#3b2312"/>
+            <!-- Ống khói tỏa khói lam chiều -->
+            <rect x="34" y="-18" width="6" height="16" fill="#4a2e19"/>
+            <circle cx="37" cy="-25" r="5" fill="#ffffff" opacity="0.4"/>
+            <circle cx="40" cy="-34" r="6" fill="#ffffff" opacity="0.25"/>
+            <!-- Cửa sổ sáng ánh đèn vàng ấm áp -->
+            <rect x="8" y="15" width="13" height="13" fill="#ffbe0b"/>
+            <line x1="14.5" y1="15" x2="14.5" y2="28" stroke="#3b2312" stroke-width="1.5"/>
+            <line x1="8" y1="21.5" x2="21" y2="21.5" stroke="#3b2312" stroke-width="1.5"/>
+            <rect x="27" y="16" width="12" height="20" fill="#2c1a0e"/>
+            <line x1="-4" y1="36" x2="50" y2="36" stroke="#4a2e19" stroke-width="3"/>
+          </g>
+
+          <!-- Hàng rào gỗ mộc mạc -->
+          <g id="pineFence">
+            <rect x="0" y="25" width="160" height="6" fill="#ded5c8" stroke="#b8ab9a" stroke-width="0.8" rx="2"/>
+            <rect x="0" y="55" width="160" height="6" fill="#ded5c8" stroke="#b8ab9a" stroke-width="0.8" rx="2"/>
+            <polygon points="20,6 25,14 25,85 15,85 15,14" fill="#d2c7b8" stroke="#b8ab9a" stroke-width="0.8"/>
+            <polygon points="70,6 75,14 75,85 65,85 65,14" fill="#e4dbce" stroke="#b8ab9a" stroke-width="0.8"/>
+            <polygon points="120,6 125,14 125,85 115,85 115,14" fill="#d2c7b8" stroke="#b8ab9a" stroke-width="0.8"/>
+          </g>
+        </defs>
+
+        <!-- TẦNG 1: DÃY NÚI LANG BIANG XA NHẤT (Xanh lam mờ ảo sương khói) -->
+        <path d="M0,170 Q240,85 520,120 T1040,75 Q1240,60 1440,105 L1440,380 L0,380 Z" fill="#6a9bbb" opacity="0.4"/>
+        
+        <!-- TẦNG 2: DẢI SƯƠNG MÙ BẢNG LẢNG THUNG LŨNG -->
+        <path d="M0,205 Q380,140 780,175 T1440,150 L1440,380 L0,380 Z" fill="#e2f0fb" opacity="0.6"/>
+
+        <!-- TẦNG 3: DÃY ĐỒI THÔNG TRUNG CẢNH -->
+        <path d="M0,225 Q280,155 600,190 T1180,165 Q1340,155 1440,185 L1440,380 L0,380 Z" fill="#3b7a57" opacity="0.75"/>
+
+        <!-- Căn nhà gỗ homestay nhỏ nép mình trên sườn đồi -->
+        <g transform="translate(880, 135) scale(0.95)"><use href="#hillsideCabin"/></g>
+
+        <!-- Hàng rào gỗ chạy dọc triền đồi -->
+        <g class="fence-layer" opacity="0.85">
+          <g transform="translate(180, 225) rotate(-3)"><use href="#pineFence"/></g>
+          <g transform="translate(340, 215) rotate(2)"><use href="#pineFence"/></g>
+          <g transform="translate(500, 225) rotate(-1)"><use href="#pineFence"/></g>
+          <g transform="translate(660, 220) rotate(3)"><use href="#pineFence"/></g>
+          <g transform="translate(1020, 220) rotate(1)"><use href="#pineFence"/></g>
+          <g transform="translate(1180, 225) rotate(-3)"><use href="#pineFence"/></g>
+        </g>
+
+        <!-- TẦNG 4: RỪNG THÔNG BA LÁ BẠT NGÀN -->
+        <g class="pines-layer">
+          <g transform="translate(50, 75) scale(1.2)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(125, 110) scale(0.95)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(200, 125) scale(0.8)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(270, 150) scale(0.7)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(440, 135) scale(0.75)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(580, 145) scale(0.68)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(730, 130) scale(0.8)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(1050, 140) scale(0.75)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(1180, 130) scale(0.85)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(1260, 100) scale(0.95)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(1340, 60) scale(1.25)"><use href="#dalatFinePine"/></g>
+          <g transform="translate(1410, 95) scale(0.9)"><use href="#dalatFinePine"/></g>
+        </g>
+
+        <!-- TẦNG 5: TRIỀN ĐỒI CỎ THÔNG TIỀN CẢNH -->
+        <path d="M0,285 Q360,250 740,280 T1440,265 L1440,380 L0,380 Z" fill="#1b4332"/>
+        <path d="M0,325 Q420,300 840,325 T1440,315 L1440,380 L0,380 Z" fill="#132c21"/>
+      </svg>
+    </div>
+
+    <!-- FOOTER NẰM GỌN LIỀN KỀ DƯỚI ĐỒI THÔNG -->
+    <footer class="aesthetic-footer">
+      <div class="footer-container">
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- LIGHTBOX MODAL FOR POLAROID PHOTOS -->
+  <div class="lightbox-modal hidden" id="lightboxModal">
+    <div class="lightbox-backdrop" id="lightboxBackdrop"></div>
+    <div class="lightbox-container">
+      <button class="lightbox-close-btn" id="lightboxCloseBtn">&times;</button>
+      <img src="" alt="Zoomed memory" id="lightboxImg">
+      <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>

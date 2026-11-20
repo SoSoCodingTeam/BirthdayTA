@@ -1,0 +1,1204 @@
+/* ==========================================================================
+   AESTHETIC DALAT STORYBOOK & MOODBOARD
+   Birthday: Tâm Anh
+   Theme: Misty Mountain Ridges, Pine Forest & Cozy Coffee Aesthetic
+   ========================================================================== */
+
+:root {
+  /* Palette: Misty Dalat Mountain & Pine Forest Tones */
+  --sky-gradient-top: #5593be;
+  --sky-gradient-mid: #9bc7e6;
+  --sky-gradient-soft: #dbeaf5;
+  --sky-gradient-haze: #f6f8fb;
+  
+  --sun-gold: #e29547;
+  --sun-amber: #c87630;
+  --sun-soft-glow: rgba(226, 149, 71, 0.35);
+
+  --pine-forest-deep: #132c21;
+  --pine-forest-mid: #254a37;
+  --pine-moss: #52796f;
+  
+  --paper-card: rgba(255, 255, 255, 0.92);
+  --paper-card-border: rgba(215, 228, 222, 0.7);
+  --paper-postcard: #faf7f0;
+  
+  --text-primary: #1c2d37;
+  --text-muted: #5e7482;
+  --text-accent: #c87630;
+
+  --shadow-journal: 0 20px 45px rgba(19, 44, 33, 0.08), 0 4px 12px rgba(0, 0, 0, 0.04);
+  --shadow-polaroid: 0 10px 24px rgba(28, 45, 55, 0.09), 0 2px 6px rgba(0, 0, 0, 0.03);
+
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-hand: 'Caveat', cursive;
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --transition-smooth: all 0.35s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-sans);
+  background-color: var(--sky-gradient-haze);
+  color: var(--text-primary);
+  line-height: 1.65;
+  overflow-x: hidden;
+  position: relative;
+  min-height: 100vh;
+}
+
+/* Background Canvas: Sương mờ, bụi thông & ánh sáng ấm */
+#ambientCanvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 15;
+}
+
+/* ==========================================================================
+   SCREEN 1: COVER SCREEN ("Ai cho hết sinh nhật")
+   ========================================================================== */
+.screen {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+}
+
+.cover-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 30px 20px 80px;
+  background: linear-gradient(180deg, #132418 0%, #1c3525 50%, #2b4b35 100%);
+  color: #fff;
+  z-index: 20;
+  position: fixed;
+  top: 0;
+  left: 0;
+  transition: opacity 0.8s ease, transform 0.8s ease, visibility 0.8s;
+}
+
+.cover-screen.fade-out {
+  opacity: 0;
+  transform: scale(1.04);
+  visibility: hidden;
+  pointer-events: none;
+}
+
+.pine-trees-silhouette {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 160px;
+  pointer-events: none;
+  background-repeat: repeat-x;
+  background-position: bottom center;
+  background-size: 320px 160px;
+  opacity: 0.28;
+  background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 160"><path fill="%230d1710" d="M30 160 L30 120 L15 120 L30 90 L20 90 L30 65 L25 65 L35 40 L45 65 L40 65 L50 90 L40 90 L55 120 L40 120 L40 160 Z M120 160 L120 110 L105 110 L120 80 L110 80 L120 50 L112 50 L125 20 L138 50 L130 50 L140 80 L130 80 L145 110 L130 110 L130 160 Z M220 160 L220 130 L208 130 L220 100 L212 100 L220 75 L215 75 L225 50 L235 75 L230 75 L238 100 L230 100 L242 130 L230 130 L230 160 Z M290 160 L290 120 L280 120 L290 95 L282 95 L292 70 L288 70 L295 45 L302 70 L298 70 L308 95 L300 95 L310 120 L300 120 L300 160 Z"/></svg>');
+}
+
+.mist-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at 50% 40%, rgba(246, 243, 235, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.cover-content {
+  max-width: 620px;
+  position: relative;
+  z-index: 2;
+  animation: fadeInUp 0.9s ease-out;
+}
+
+.badge-tag {
+  display: inline-block;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 30px;
+  font-size: 0.82rem;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  color: #ffda79;
+  margin-bottom: 20px;
+}
+
+.cover-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 6vw, 4rem);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  text-shadow: 0 4px 16px rgba(0, 0, 0, 0.4);
+}
+
+.cover-title .highlight {
+  display: inline-block;
+  color: #ffda79;
+  position: relative;
+}
+
+.cover-title .highlight::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 0;
+  width: 100%;
+  height: 6px;
+  background: rgba(200, 118, 48, 0.7);
+  border-radius: 4px;
+  z-index: -1;
+}
+
+.cover-subtitle {
+  font-size: clamp(1rem, 2.5vw, 1.2rem);
+  font-weight: 300;
+  color: #d8e6db;
+  margin-bottom: 36px;
+  line-height: 1.7;
+}
+
+.cover-subtitle strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.cover-cta-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+}
+
+.cta-button {
+  background: linear-gradient(135deg, var(--sun-gold) 0%, var(--sun-amber) 100%);
+  color: #fff;
+  border: none;
+  padding: 16px 38px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  font-family: var(--font-sans);
+  border-radius: 50px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  box-shadow: 0 8px 24px rgba(200, 118, 48, 0.45);
+  transition: var(--transition-smooth);
+}
+
+.cta-button:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(200, 118, 48, 0.6);
+}
+
+.cta-icon {
+  width: 20px;
+  height: 20px;
+  transition: transform 0.3s ease;
+}
+
+.cta-button:hover .cta-icon {
+  transform: translateX(4px);
+}
+
+.pulse {
+  animation: pulseGlow 2.4s infinite;
+}
+
+@keyframes pulseGlow {
+  0% { box-shadow: 0 0 0 0 rgba(226, 149, 71, 0.7); }
+  70% { box-shadow: 0 0 0 18px rgba(226, 149, 71, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(226, 149, 71, 0); }
+}
+
+.cta-hint {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  color: #ffe6a7;
+}
+
+/* ==========================================================================
+   SCREEN 2: MAIN PAGE (AESTHETIC STORYBOOK & MOODBOARD)
+   ========================================================================== */
+.main-screen {
+  position: relative;
+  opacity: 1;
+  transition: opacity 0.8s ease;
+  min-height: 100vh;
+  background: linear-gradient(180deg, 
+    var(--sky-gradient-top) 0%, 
+    var(--sky-gradient-mid) 12%, 
+    var(--sky-gradient-soft) 30%, 
+    var(--sky-gradient-haze) 60%, 
+    #ffffff 100%
+  );
+  overflow: hidden;
+}
+
+.main-screen.hidden {
+  display: none;
+}
+
+/* Landscape Backdrop (Fixed at top under the sky) */
+.landscape-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 600px;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 1;
+}
+
+.backdrop-mountains-svg {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 260px;
+  display: block;
+}
+
+/* Golden Sun with soft lens flare */
+.dalat-sun-container {
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 280px;
+  height: 280px;
+  pointer-events: none;
+}
+
+.sun-flare {
+  width: 140px;
+  height: 140px;
+  position: absolute;
+  top: 70px;
+  right: 70px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #ffffff 15%, #fff5a5 45%, var(--sun-gold) 75%, rgba(226, 149, 71, 0) 100%);
+  box-shadow: 0 0 70px rgba(226, 149, 71, 0.5), 0 0 120px rgba(255, 235, 120, 0.35);
+  animation: sunBreathe 6s ease-in-out infinite alternate;
+}
+
+@keyframes sunBreathe {
+  0% { transform: scale(0.96); opacity: 0.9; }
+  100% { transform: scale(1.05); opacity: 1; }
+}
+
+.sun-beam {
+  position: absolute;
+  background: linear-gradient(135deg, rgba(255, 248, 220, 0.4) 0%, rgba(255, 235, 150, 0.1) 50%, rgba(255, 255, 255, 0) 100%);
+  transform-origin: top right;
+  pointer-events: none;
+  filter: blur(8px);
+}
+
+.beam-1 {
+  width: 160px;
+  height: 700px;
+  top: 90px;
+  right: 100px;
+  transform: rotate(-35deg);
+  opacity: 0.6;
+}
+
+.beam-2 {
+  width: 110px;
+  height: 800px;
+  top: 50px;
+  right: 160px;
+  transform: rotate(-45deg);
+  opacity: 0.45;
+}
+
+/* Clouds */
+.clouds-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 350px;
+  overflow: hidden;
+}
+
+.cloud {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.65);
+  border-radius: 100px;
+  filter: blur(4px);
+}
+
+.cloud::before, .cloud::after {
+  content: '';
+  position: absolute;
+  background: inherit;
+  border-radius: 50%;
+}
+
+.cloud-1 {
+  width: 150px;
+  height: 45px;
+  top: 60px;
+  left: -180px;
+  animation: driftCloud 50s linear infinite;
+}
+.cloud-1::before { width: 65px; height: 65px; top: -30px; left: 25px; }
+.cloud-1::after { width: 80px; height: 80px; top: -40px; right: 25px; }
+
+.cloud-2 {
+  width: 200px;
+  height: 60px;
+  top: 130px;
+  left: -240px;
+  animation: driftCloud 70s linear infinite 14s;
+  opacity: 0.5;
+}
+.cloud-2::before { width: 80px; height: 80px; top: -40px; left: 35px; }
+.cloud-2::after { width: 100px; height: 100px; top: -50px; right: 35px; }
+
+.cloud-3 {
+  width: 130px;
+  height: 40px;
+  top: 220px;
+  left: -160px;
+  animation: driftCloud 55s linear infinite 28s;
+  opacity: 0.4;
+}
+.cloud-3::before { width: 55px; height: 55px; top: -25px; left: 20px; }
+.cloud-3::after { width: 65px; height: 65px; top: -30px; right: 20px; }
+
+@keyframes driftCloud {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(calc(100vw + 300px)); }
+}
+
+/* ==========================================================================
+   JOURNAL WRAPPER (COHESIVE EDITORIAL LAYOUT)
+   ========================================================================== */
+.journal-wrapper {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 80px 24px 40px;
+  position: relative;
+  z-index: 5;
+}
+
+/* Botanical Divider */
+.botanical-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin: 48px auto;
+  max-width: 480px;
+  opacity: 0.7;
+}
+
+.botanical-divider .line {
+  flex: 1;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(82, 121, 111, 0.4), transparent);
+}
+
+.botanical-divider .icon {
+  font-size: 0.95rem;
+  letter-spacing: 4px;
+}
+
+/* Header */
+.aesthetic-header {
+  text-align: center;
+}
+
+.journal-stamp {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 6px 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(82, 121, 111, 0.3);
+  border-radius: 40px;
+  box-shadow: 0 4px 12px rgba(19, 44, 33, 0.06);
+  margin-bottom: 24px;
+}
+
+.journal-stamp .stamp-icon { font-size: 1rem; }
+.journal-stamp .stamp-text {
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  color: var(--pine-forest-mid);
+}
+
+.aesthetic-title {
+  font-family: var(--font-serif);
+  font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+  color: #11291d;
+  line-height: 1.2;
+  margin-bottom: 18px;
+}
+
+.highlight-name {
+  color: var(--text-accent);
+  font-style: italic;
+  position: relative;
+}
+
+.aesthetic-lead {
+  font-size: clamp(1rem, 2vw, 1.15rem);
+  color: #3b5548;
+  max-width: 680px;
+  margin: 0 auto 36px;
+  line-height: 1.8;
+  font-style: italic;
+}
+
+/* Aesthetic Postcard Card */
+.aesthetic-postcard-card {
+  position: relative;
+  background: var(--paper-postcard);
+  padding: 44px 38px 36px;
+  border-radius: 16px;
+  box-shadow: var(--shadow-journal);
+  border: 1px dashed rgba(160, 130, 100, 0.4);
+  text-align: left;
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.washi-tape-pin {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 90px;
+  height: 24px;
+  background: rgba(82, 121, 111, 0.65);
+  box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+  border-left: 3px dashed rgba(0,0,0,0.1);
+  border-right: 3px dashed rgba(0,0,0,0.1);
+  opacity: 0.9;
+}
+
+.postcard-stamp-mark {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  font-family: monospace;
+  font-size: 0.68rem;
+  color: #8c7258;
+  letter-spacing: 1px;
+  border: 1px dashed #b59f88;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.postcard-heading {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--pine-forest-deep);
+  margin-bottom: 14px;
+}
+
+.postcard-body {
+  font-size: 1.05rem;
+  color: #33443b;
+  line-height: 1.85;
+  margin-bottom: 22px;
+}
+
+.postcard-signature {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.sign-from {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.sign-names {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--sun-amber);
+}
+
+/* ==========================================================================
+   JOURNAL SECTION LABELS
+   ========================================================================== */
+.journal-section {
+  padding: 10px 0;
+  position: relative;
+}
+
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 10px;
+}
+
+.label-number {
+  font-family: var(--font-serif);
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-accent);
+  border-bottom: 1px solid var(--text-accent);
+}
+
+.label-text {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  color: var(--pine-moss);
+}
+
+.section-art-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 3.8vw, 2.4rem);
+  color: var(--pine-forest-deep);
+  margin-bottom: 8px;
+}
+
+.section-art-sub {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 32px;
+}
+
+/* ==========================================================================
+   SECTION 1: VINTAGE CINEMA FRAME (VIDEO)
+   ========================================================================== */
+.cinema-tape-tabs {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+}
+
+.tape-tab-btn {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(82, 121, 111, 0.35);
+  border-radius: 30px;
+  padding: 8px 18px;
+  font-family: var(--font-sans);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--pine-forest-deep);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 2px 8px rgba(19, 44, 33, 0.06);
+  transition: var(--transition-smooth);
+}
+
+.tape-tab-btn:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 14px rgba(19, 44, 33, 0.12);
+}
+
+.tape-tab-btn.active {
+  background: var(--pine-forest-mid);
+  color: #ffffff;
+  border-color: var(--pine-forest-mid);
+  box-shadow: 0 4px 14px rgba(37, 74, 55, 0.35);
+}
+
+.tape-tab-btn .tab-icon {
+  font-size: 1rem;
+}
+
+.vintage-cinema-box {
+  background: #181c19;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 20px 45px rgba(19, 44, 33, 0.2);
+  border: 1px solid rgba(82, 121, 111, 0.3);
+}
+
+.cinema-header-strip {
+  background: #101411;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.film-holes {
+  display: flex;
+  gap: 6px;
+}
+
+.film-holes span {
+  width: 8px;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 2px;
+}
+
+.film-meta {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rec-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #ff5f56;
+  box-shadow: 0 0 6px #ff5f56;
+}
+
+.film-title {
+  font-family: monospace;
+  font-size: 0.76rem;
+  color: #d1ded5;
+  letter-spacing: 0.8px;
+}
+
+.cinema-video-wrapper {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  background: #000;
+}
+
+.cinema-video-wrapper video,
+.cinema-video-wrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border: none;
+}
+
+.cinema-footer-guide {
+  background: rgba(16, 20, 17, 0.95);
+  padding: 10px 18px;
+  font-size: 0.85rem;
+  color: #d1ded5;
+  text-align: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.cinema-footer-guide code {
+  background: rgba(255, 255, 255, 0.12);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--sun-gold);
+}
+
+/* ==========================================================================
+   SECTION 2: POLAROID MOODBOARD GALLERY
+   ========================================================================== */
+.moodboard-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 32px 24px;
+  padding: 10px 0;
+}
+
+.moodboard-card {
+  background: #ffffff;
+  padding: 12px 12px 18px 12px;
+  border-radius: 4px;
+  box-shadow: var(--shadow-polaroid);
+  position: relative;
+  cursor: pointer;
+  border: 1px solid rgba(0, 0, 0, 0.04);
+  transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275), box-shadow 0.3s ease;
+}
+
+.moodboard-card:hover {
+  transform: translateY(-8px) scale(1.03) !important;
+  box-shadow: 0 20px 36px rgba(19, 44, 33, 0.16);
+  z-index: 10;
+}
+
+.tilt-left-subtle { transform: rotate(-2deg); }
+.tilt-right-subtle { transform: rotate(2deg); }
+.tilt-straight { transform: rotate(-0.3deg); }
+
+.washi-tape-strip {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70px;
+  height: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  opacity: 0.88;
+  border-left: 2px dashed rgba(0,0,0,0.08);
+  border-right: 2px dashed rgba(0,0,0,0.08);
+}
+
+.tape-moss { background: rgba(82, 121, 111, 0.7); }
+.tape-terracotta { background: rgba(200, 118, 48, 0.65); }
+.tape-coffee { background: rgba(120, 80, 50, 0.6); }
+
+.moodboard-img-wrap {
+  width: 100%;
+  aspect-ratio: 4/4.5;
+  overflow: hidden;
+  border-radius: 2px;
+  background: #f0f4f2;
+}
+
+.moodboard-img-wrap.aspect-wide {
+  aspect-ratio: 4/3;
+}
+
+.moodboard-card.card-cinema-size {
+  grid-column: 1 / -1;
+  width: 100%;
+  margin-top: 8px;
+  padding: 14px 14px 20px 14px;
+}
+
+.moodboard-card.card-cinema-size .moodboard-img-wrap.aspect-cinema {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+}
+
+.moodboard-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+  filter: contrast(101%) brightness(101%);
+}
+
+.moodboard-card:hover .moodboard-img-wrap img {
+  transform: scale(1.04);
+}
+
+.moodboard-caption {
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  color: var(--pine-forest-deep);
+  text-align: center;
+  margin-top: 14px;
+  line-height: 1.25;
+  font-weight: 700;
+}
+
+.photo-guide-note {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 28px;
+}
+
+.photo-guide-note code {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: var(--sun-amber);
+  border: 1px solid rgba(82, 121, 111, 0.3);
+}
+
+/* ==========================================================================
+   SECTION 3: AESTHETIC WISH JAR
+   ========================================================================== */
+.aesthetic-wish-box {
+  background: var(--paper-card);
+  padding: 44px 32px;
+  border-radius: 20px;
+  box-shadow: var(--shadow-journal);
+  border: 1.5px solid var(--paper-card-border);
+  text-align: center;
+  max-width: 620px;
+  margin: 0 auto;
+  backdrop-filter: blur(14px);
+}
+
+.wish-cake-icon {
+  font-size: 2.8rem;
+  margin-bottom: 12px;
+  animation: bounceSoft 2.5s infinite ease-in-out;
+}
+
+@keyframes bounceSoft {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.wish-title {
+  font-family: var(--font-serif);
+  font-size: 1.7rem;
+  color: var(--pine-forest-deep);
+  margin-bottom: 8px;
+}
+
+.wish-desc {
+  font-size: 0.98rem;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+.aesthetic-wish-btn {
+  background: linear-gradient(135deg, var(--sun-gold) 0%, var(--sun-amber) 100%);
+  color: #fff;
+  border: none;
+  padding: 15px 34px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  border-radius: 30px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(200, 118, 48, 0.35);
+  transition: var(--transition-smooth);
+}
+
+.aesthetic-wish-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(200, 118, 48, 0.5);
+}
+
+.wish-result-message {
+  margin-top: 24px;
+  padding: 18px 24px;
+  background: #fffdf5;
+  border-radius: 12px;
+  border: 1px solid rgba(82, 121, 111, 0.3);
+  border-left: 5px solid var(--sun-amber);
+   font-family: var(--font-serif);
+  font-size: 1rem;
+  color: var(--pine-forest-deep);
+  line-height: 1.5;
+  animation: fadeIn 0.4s ease-in;
+  font-weight: 700;
+}
+
+.wish-result-message.hidden {
+  display: none;
+}
+
+/* ==========================================================================
+   BOTTOM MOUNTAINS & PINES PANORAMA (HARMONIOUS AESTHETIC)
+   ========================================================================== */
+.mountains-bottom-landscape {
+  position: relative;
+  width: 100%;
+  margin-top: 50px;
+  overflow: hidden;
+  background: linear-gradient(180deg, transparent 0%, rgba(219, 234, 245, 0.2) 30%, rgba(19, 44, 33, 0.35) 100%);
+}
+
+.landscape-rustic-label {
+  text-align: center;
+  margin-bottom: 14px;
+  position: relative;
+  z-index: 2;
+}
+
+.landscape-rustic-label span {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  padding: 6px 22px;
+  border-radius: 30px;
+  border: 1px solid rgba(82, 121, 111, 0.4);
+  font-family: var(--font-hand);
+  font-size: 1.3rem;
+  color: var(--pine-forest-deep);
+  font-weight: 700;
+  box-shadow: 0 4px 15px rgba(19, 44, 33, 0.08);
+}
+
+.artistic-mountain-svg {
+  width: 100%;
+  height: clamp(300px, 36vw, 420px);
+  display: block;
+  filter: drop-shadow(0 -8px 20px rgba(19, 44, 33, 0.18));
+}
+
+/* Gió đung đưa nhẹ nhàng */
+.pines-layer {
+  transform-origin: 50% 100%;
+  animation: pinesWind 6s ease-in-out infinite alternate;
+}
+
+@keyframes pinesWind {
+  0% { transform: rotate(0deg); }
+  50% { transform: rotate(0.8deg); }
+  100% { transform: rotate(-0.6deg); }
+}
+
+/* ==========================================================================
+   AESTHETIC FOOTER
+   ========================================================================== */
+.aesthetic-footer {
+  background: #132c21; /* Nối liền màu đồi thông tiền cảnh */
+  padding: 26px 0 38px;
+  text-align: center;
+  color: #bcdbc6;
+  position: relative;
+  z-index: 5;
+  margin-top: -1px;
+}
+
+.footer-container {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.aesthetic-footer p {
+  font-size: 1.05rem;
+  color: #e4f2e8;
+}
+
+.aesthetic-footer strong {
+  color: var(--sun-gold);
+}
+
+.small-sub {
+  font-size: 0.85rem;
+  margin-top: 6px;
+  color: #92bfa0;
+}
+
+.back-to-cover-btn {
+  margin-top: 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(82, 121, 111, 0.5);
+  padding: 8px 22px;
+  border-radius: 25px;
+  font-size: 0.85rem;
+  color: #ffe6a7;
+  cursor: pointer;
+  transition: var(--transition-smooth);
+}
+
+.back-to-cover-btn:hover {
+  background: var(--sun-gold);
+  color: #132c21;
+  border-color: var(--sun-gold);
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   LIGHTBOX MODAL
+   ========================================================================== */
+.lightbox-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+}
+
+.lightbox-modal.hidden {
+  display: none;
+}
+
+.lightbox-backdrop {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(19, 44, 33, 0.88);
+  backdrop-filter: blur(10px);
+}
+
+.lightbox-container {
+  position: relative;
+  z-index: 2;
+  max-width: 90vw;
+  max-height: 88vh;
+  background: #fff;
+  padding: 16px 16px 24px 16px;
+  border-radius: 8px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  animation: zoomIn 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.lightbox-container img {
+  max-width: 100%;
+  max-height: 72vh;
+  object-fit: contain;
+  border-radius: 4px;
+}
+
+.lightbox-caption {
+  font-family: var(--font-hand);
+  font-size: 1.6rem;
+  color: var(--pine-forest-deep);
+  margin-top: 14px;
+  text-align: center;
+  font-weight: 700;
+}
+
+.lightbox-close-btn {
+  position: absolute;
+  top: -16px;
+  right: -16px;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--sun-amber);
+  color: #fff;
+  border: 2px solid #fff;
+  font-size: 1.4rem;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease;
+}
+
+.lightbox-close-btn:hover {
+  transform: scale(1.1);
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { opacity: 0; transform: scale(0.92); }
+  to { opacity: 1; transform: scale(1); }
+}
+
+/* Responsive adjustments */
+@media (max-width: 680px) {
+  .journal-wrapper {
+    padding: 60px 16px 30px;
+  }
+  
+  .moodboard-gallery {
+    grid-template-columns: 1fr;
+    max-width: 320px;
+    margin: 0 auto;
+  }
+  
+  .music-widget {
+    bottom: 14px;
+    right: 14px;
+    padding: 6px 12px 6px 8px;
+  }
+  
+  .music-info {
+    display: none;
+  }
+
+  .aesthetic-postcard-card {
+    padding: 30px 18px 24px;
+  }
+
+  .dalat-sun-container {
+    width: 200px;
+    height: 200px;
+    top: -40px;
+    right: -40px;
+  }
+
+  .artistic-mountain-svg {
+    height: 280px;
+  }
+}
+
+
+/* ==========================================================================
+   ẢNH BẤT NGỜ RƠI XUỐNG KHI THỔI NẾN
+   ========================================================================== */
+
+.falling-surprise-image {
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 50%;
+  width: min(500px, 90vw);
+  max-height: 60vh;
+  object-fit: contain;
+  pointer-events: none;
+  border-radius: 14px;
+  box-shadow: 0 14px 40px rgba(19, 44, 33, 0.28);
+  transform: translate(-50%, -120%) rotate(-8deg);
+  animation: hahFallDown 3.2s cubic-bezier(0.2, 0.75, 0.3, 1) forwards;
+}
+
+@keyframes hahFallDown {
+  0% {
+    top: -10vh;
+    opacity: 0;
+    transform: translate(-50%, -100%) rotate(-8deg) scale(0.75);
+  }
+
+  12% {
+    opacity: 1;
+  }
+
+  72% {
+    top: 68vh;
+    opacity: 1;
+    transform: translate(-50%, -50%) rotate(7deg) scale(1);
+  }
+
+  86% {
+    top: 65vh;
+    transform: translate(-50%, -50%) rotate(-4deg) scale(1.02);
+  }
+
+  100% {
+    top: 68vh;
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(3deg) scale(0.98);
+  }
+}
+
+/* Responsive cho mobile */
+@media (max-width: 680px) {
+  .falling-surprise-image {
+    width: min(210px, 62vw);
+    max-height: 35vh;
+  }
+}
